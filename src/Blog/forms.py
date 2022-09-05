@@ -17,10 +17,6 @@ class SignupForm(forms.ModelForm):
             'email': forms.EmailInput
         }
 
-class ConnectForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = [
-            'username',
-            'password'
-        ]
+class ConnectForm(forms.Form):
+    username = forms.CharField(max_length=40)
+    password = forms.CharField(widget=forms.PasswordInput)

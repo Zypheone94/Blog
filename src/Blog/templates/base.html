@@ -16,7 +16,7 @@
         {% if is_auth %}
             <p>Bonjour {{username}}</p>
         {% else %}
-            <button>Connexion</button>
+            <button> <a href="{% url 'connexion'%}">Connexion</a></button>
         {% endif %}
 
     </header>

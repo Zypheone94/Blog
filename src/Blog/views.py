@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 
 from .forms import SignupForm, ConnectForm
@@ -43,8 +43,13 @@ def signup(request):
 def connect(request):
     form = ConnectForm()
     if request.method == "POST":
-        form = SignupForm(request.POST)
+        form = ConnectForm(request.POST)
         if form.is_valid():
-            user = authenticate(username='magna', password="Zypheone94")
+            user = authenticate(
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password']
+            )
             if user is not None:
                 login(request, user)
+                return redirect('home')
+    return render(request, 'connect.html', context={"form": form})
