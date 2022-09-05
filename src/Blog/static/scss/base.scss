@@ -1,0 +1,19 @@
+$paddingV: 0 10%;
+
+body {
+
+    margin: 0;
+
+    header{
+        display: flex;
+        justify-content: space-between;
+
+        padding: $paddingV;
+    }
+
+    footer {
+        background-color: #4b4b4b;
+        padding: $paddingV;
+        color: lightgray
+    }
+}

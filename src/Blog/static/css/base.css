@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+}
+body header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+}
+body footer {
+  background-color: #4b4b4b;
+  padding: 0 10%;
+  color: lightgray;
+}

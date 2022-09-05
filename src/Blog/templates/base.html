@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header>
+        <form method="POST">
+            FORM
+            <button>Logo envoie</button>
+        </form>
+        <h1>Titre</h1>
+        {% if is_auth %}
+            <p>Bonjour {{username}}</p>
+        {% else %}
+            <button>Connexion</button>
+        {% endif %}
+
+    </header>
+    <section id="main">
+        {% block section %}
+        {% endblock %}
+    </section>
+    <footer>
+        Logo Réseaux sociaux
+        Copyright mention légales
+    </footer>
+</body>
+</html>
