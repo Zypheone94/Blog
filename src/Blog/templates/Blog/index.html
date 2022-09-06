@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
 {% block title %}
     VidéoGameBlog
 {% endblock %}
@@ -12,8 +16,20 @@
     </ul>
 
     {% for i in posts %}
-    <h1>{{ i.title }}</h1>
-        <img src="{{ i.mainImage.url }}" alt="">
+    <div class="card_list">
+        <div class="post_card">
+            <span class="img_span">
+                <img src="{{ i.mainImage.url }}" alt="{{i.title}}"> 
+            </span>
+            <div class="content">
+                <span><b>{{i.author}}</b></span>
+                <span>{{i.date}}</span>
+                <h2>{{i.title}}</h2>
+                <p>{{i.content|truncatewords:25}}</p>
+            </div>
+        </div>
+    </div>
+    
     {% endfor %}
 
 {% endblock %}
