@@ -8,16 +8,27 @@
 </head>
 <body>
     <header>
-        <form method="POST">
-            FORM
-            <button>Logo envoie</button>
-        </form>
-        <h1>Titre</h1>
-        {% if is_auth %}
-            <p>Bonjour {{username}}</p>
-        {% else %}
-            <button> <a href="{% url 'connexion'%}">Connexion</a></button>
-        {% endif %}
+        <nav>
+            <form method="POST">
+                FORM
+                <button>Logo envoie</button>
+            </form>
+            
+            {% if is_auth %}
+                <div>
+                    <p>Bonjour {{username}}</p>
+                </div>
+
+            {% else %}
+                <div>
+                    <button> <a href="{% url 'connexion'%}">Connexion</a></button>
+                </div>
+            {% endif %}
+        </nav>
+        
+        <div id="main">
+            <h1>Video Game Blog</h1>
+        </div>
 
     </header>
     <section id="main">

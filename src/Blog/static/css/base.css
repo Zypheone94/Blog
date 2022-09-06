@@ -2,12 +2,47 @@ body {
   margin: 0;
 }
 body header {
+  padding: 0 10%;
+}
+body header nav {
   display: flex;
   justify-content: space-between;
-  padding: 0 10%;
+}
+body header nav form {
+  min-width: 35%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+body header nav div {
+  min-width: 35%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+body header #main {
+  background: linear-gradient(to right, blue, orange);
+  width: 100%;
+  height: 35vh;
+}
+body header #main h1 {
+  border: 4px solid black;
+  background-color: white;
+  max-width: 30%;
+  height: 10%;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  top: -2%;
+  right: 35%;
+  left: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 body footer {
   background-color: #4b4b4b;
   padding: 0 10%;
   color: lightgray;
+  height: 12vh;
 }
