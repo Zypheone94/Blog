@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
@@ -59,3 +59,7 @@ def connect(request):
                 login(request, user)
                 return redirect('home')
     return render(request, 'connect.html', context={"form": form})
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')

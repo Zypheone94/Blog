@@ -6,4 +6,5 @@
 
 {% block main %}
     <h1>{{ user.username }}</h1>
+    <p><a href="{% url 'logout' %}">Se déconnecter</a></p>
 {% endblock %}
