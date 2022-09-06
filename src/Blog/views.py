@@ -5,9 +5,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 
 from .forms import SignupForm, ConnectForm
+from blog_post.models import Post
 
 
 def index(request):
+    posts = Post.objects.order_by('-date')[:3]
+
+    print(posts)
+
     username = ""
     is_auth = ""
     if request.user.is_authenticated:
@@ -17,7 +22,7 @@ def index(request):
     else :
         username = "null"
         is_auth = False
-    return render(request, 'Blog/index.html', context={'username': username, 'is_auth' : is_auth})
+    return render(request, 'Blog/index.html', context={'username': username, 'is_auth' : is_auth, 'posts': posts})
 
 def userBoard(request, id):
     print(type(id), type(request.user.id))

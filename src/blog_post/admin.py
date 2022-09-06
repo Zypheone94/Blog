@@ -8,7 +8,8 @@ class PostAdmin(admin.ModelAdmin):
         'author',
         'isPublished',
         'date',
-        'get_categories'
+        'get_categories',
+        'mainImage'
     )
 
     list_per_page = 5

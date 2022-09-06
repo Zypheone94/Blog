@@ -28,6 +28,7 @@ class Post(models.Model):
     date = models.DateTimeField()
     isPublished = models.BooleanField()
     categories = models.ManyToManyField(Category)
+    mainImage = models.ImageField(upload_to="main_post", null=True, default='Null')
 
     def save(self, *args, **kwargs):
 
