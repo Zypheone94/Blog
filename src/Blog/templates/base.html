@@ -16,12 +16,12 @@
             
             {% if is_auth %}
                 <div>
-                    <p>Bonjour {{username}}</p>
+                    <p><a href="{% url 'userBoard' id=user.id%}" id="user">Bonjour {{username}}</a></p>
                 </div>
 
             {% else %}
                 <div>
-                    <button> <a href="{% url 'connexion'%}">Connexion</a></button>
+                    <button> <a href="{% url 'connexion'%}" id="connect">Connexion</a></button>
                 </div>
             {% endif %}
         </nav>

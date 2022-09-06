@@ -20,6 +20,18 @@ body header nav div {
   justify-content: end;
   align-items: center;
 }
+body header nav div #user {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-weight: 900;
+}
+body header nav div #connect {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-weight: 900;
+}
 body header #main {
   background: linear-gradient(to right, blue, orange);
   width: 100%;

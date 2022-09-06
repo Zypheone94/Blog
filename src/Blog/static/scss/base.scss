@@ -26,6 +26,20 @@ body {
                 display: flex;
                 justify-content: end;
                 align-items: center;
+
+                #user{
+                    text-decoration: none;
+                    color: black;
+                    cursor: pointer;
+                    font-weight: 900;
+                }
+
+                #connect{
+                    text-decoration: none;
+                    color: black;
+                    cursor: pointer;
+                    font-weight: 900;
+                }
             }
 
         }

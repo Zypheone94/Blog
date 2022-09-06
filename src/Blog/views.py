@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 
 from .forms import SignupForm, ConnectForm
@@ -17,10 +17,16 @@ def index(request):
     else :
         username = "null"
         is_auth = False
-
-
-
     return render(request, 'Blog/index.html', context={'username': username, 'is_auth' : is_auth})
+
+def userBoard(request, id):
+    print(type(id), type(request.user.id))
+    if request.user.id == int(id):
+        user = get_object_or_404(User, id=id)
+        return render(request, 'user/userBoard.html', context={'user': user})
+    else:
+        return render(request, 'user/badUser.html')
+
 
 def signup(request):
     form = SignupForm()

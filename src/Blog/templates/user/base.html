@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/baseUser.css' %}">
+</head>
+<body>
+
+   <header>
+      <h2>User Board</h2>
+   </header>
+
+  <section>
+      <div id="side">
+
+      </div>
+      <div id="main">
+            {% block main %}{% endblock %}
+      </div>
+  </section>
+
+</body>
+</html>
