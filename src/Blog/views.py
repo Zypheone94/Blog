@@ -9,16 +9,18 @@ from blog_post.models import Post
 
 
 def index(request):
-    posts = Post.objects.order_by('-date')[:3]
+    posts = Post.objects.order_by('-date')[:7]
+    top = []
+    posts = list(posts)
 
-    print(posts)
+    for i in range(3):
+        top.append(posts.pop(0))
 
     username = ""
     is_auth = ""
     if request.user.is_authenticated:
         username = request.user.username
         is_auth = True
-        print(username)
     else :
         username = "null"
         is_auth = False
