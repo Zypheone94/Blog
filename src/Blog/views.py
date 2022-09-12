@@ -9,11 +9,11 @@ from blog_post.models import Post
 
 
 def index(request):
-    posts = Post.objects.order_by('-date')[:7]
+    posts = Post.objects.order_by('-date')[:5]
     top = []
     posts = list(posts)
 
-    for i in range(3):
+    for i in range(1):
         top.append(posts.pop(0))
 
     username = ""
@@ -24,7 +24,11 @@ def index(request):
     else :
         username = "null"
         is_auth = False
-    return render(request, 'Blog/index.html', context={'username': username, 'is_auth' : is_auth, 'posts': posts})
+    for i in posts:
+        if i.mainImage == 'Null':
+            print('lala')
+        print(i.mainImage)
+    return render(request, 'Blog/index.html', context={'username': username, 'is_auth' : is_auth, 'posts': posts, 'top': top})
 
 def post(request, id):
     myPost = get_object_or_404(Post, pk=id)

@@ -10,29 +10,46 @@
 {% endblock %}
 
 {% block section %}
-    <ul>
-        <li>Playstation</li>
-        <li>Nintendo</li>
-    </ul>
-
-    {% for i in posts %}
-    <a href="{% url 'post' id=i.id %}">
-       <div class="card_list">
-            <div class="post_card">
+    <div id="lastPostContent">
+        <div class="mainContent">
+            <div class="caroussel">
+                {% for j in top %}
                 <span class="img_span">
-                    <img src="{{ i.mainImage.url }}" alt="{{i.title}}">
+                    {% if j.mainImage == 'Null' %}
+                    <img src="/media/default.jpg" alt="Default">
+                    {% else %}
+                    <img src="{{ j.mainImage.url }}" alt="{{j.title}}">
+                    {% endif %}
                 </span>
-                <div class="content">
-                    <span><b>{{i.author}}</b></span>
-                    <span>{{i.date|date:"d M y"}} - {{i.date|time:"H:i"}}</span>
-                    <h2>{{i.title}}</h2>
-                    <p>{{i.content|truncatewords:25}}</p>
+                <a href="{% url 'post' id=j.id %}">
+                    <h3>{{j.title}}</h3>
+                </a>
+                <p>{{j.content|truncatewords:14}}</p>
+                <span><b>{{j.author}} le {{j.date|date:"d M y"}} - {{j.date|time:"H:i"}}</b></span>
+                {% endfor %}
+            </div>
+            <div class="card_list">
+            {% for i in posts %}
+                <div class="post_card">
+                    <span class="img_span">
+                    {% if i.mainImage == 'Null' %}
+                    <img src="/media/default.jpg" alt="Default">
+                    {% else %}
+                    <img src="{{ i.mainImage.url }}" alt="{{i.title}}">
+                    {% endif %}
+                    </span>
+                    <div class="content">
+                        <a href="{% url 'post' id=i.id %}">
+                            <h4>{{i.title}}</h4>
+                        </a>
+                        <span><b>{{i.author}} le {{i.date|date:"d M y"}} - {{i.date|time:"H:i"}}</b></span>
+                    </div>
                 </div>
+            {% endfor %}
             </div>
         </div>
-    </a>
-
+    </div>
     
-    {% endfor %}
+
 
 {% endblock %}
