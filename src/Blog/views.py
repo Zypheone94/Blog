@@ -26,6 +26,10 @@ def index(request):
         is_auth = False
     return render(request, 'Blog/index.html', context={'username': username, 'is_auth' : is_auth, 'posts': posts})
 
+def post(request, id):
+    myPost = get_object_or_404(Post, pk=id)
+    return render(request, 'Blog/post.html', context={'post': myPost})
+
 def userBoard(request, id):
     print(type(id), type(request.user.id))
     if request.user.id == int(id):

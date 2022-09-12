@@ -16,19 +16,22 @@
     </ul>
 
     {% for i in posts %}
-    <div class="card_list">
-        <div class="post_card">
-            <span class="img_span">
-                <img src="{{ i.mainImage.url }}" alt="{{i.title}}"> 
-            </span>
-            <div class="content">
-                <span><b>{{i.author}}</b></span>
-                <span>{{i.date}}</span>
-                <h2>{{i.title}}</h2>
-                <p>{{i.content|truncatewords:25}}</p>
+    <a href="{% url 'post' id=i.id %}">
+       <div class="card_list">
+            <div class="post_card">
+                <span class="img_span">
+                    <img src="{{ i.mainImage.url }}" alt="{{i.title}}">
+                </span>
+                <div class="content">
+                    <span><b>{{i.author}}</b></span>
+                    <span>{{i.date|date:"d M y"}} - {{i.date|time:"H:i"}}</span>
+                    <h2>{{i.title}}</h2>
+                    <p>{{i.content|truncatewords:25}}</p>
+                </div>
             </div>
         </div>
-    </div>
+    </a>
+
     
     {% endfor %}
 

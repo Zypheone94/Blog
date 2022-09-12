@@ -18,10 +18,11 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path
 
-from .views import index, signup, connect, logout_view, userBoard
+from .views import index, signup, connect, logout_view, userBoard, post
 
 urlpatterns = [
     path('', index, name="home"),
+    path('post/<str:id>/', post, name="post"),
     path('signup/', signup, name="signup"),
     path('connect/', connect, name="connexion"),
     path('logout', logout_view, name="logout"),
