@@ -6,7 +6,7 @@
 
 .mainContent{
     height: 100%;
-    max-width: 65%;
+    max-width: 70%;
     display: flex;
 
 
@@ -16,15 +16,9 @@
 
         box-shadow: 1px 3px 5px #c4c4c4;
 
-        h3{
-            text-decoration: none;
-            color: black; 
-        }
-
-        
-
         .img_span{
     
+            max-width: 60%;
             display: flex;
             justify-content: center;
     
@@ -32,6 +26,24 @@
     
         img{
             width: 100%;
+        }
+
+        #carousselContent{
+            padding: 2% 15% 2% 7%;
+
+            a{
+                text-decoration: none;
+                color: black; 
+            }
+    
+            span > b {
+                color: grey
+            }
+
+            p{
+                font-size: 17px;
+                margin-bottom: 10%;
+            }
         }
     }
 
@@ -52,10 +64,10 @@
     box-shadow: 3px 3px 5px #c4c4c4;
 
     width: 100%;
-    height: 22.5%;
+    height: 23.5%;
 
     .img_span{
-        min-width: 20%;
+        max-width: 30%;
 
         display: flex;
         justify-content: center;
@@ -73,6 +85,18 @@
 
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: left;
+        
+        padding: 1.5%;
+        padding-left: 3%;
+
+        a{
+            text-decoration: none;
+            color: black; 
+        }
+
+        span > b {
+            color: grey
+        }
     }
 }

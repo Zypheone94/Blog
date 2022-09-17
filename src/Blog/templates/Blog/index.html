@@ -21,12 +21,14 @@
                     <img src="{{ j.mainImage.url }}" alt="{{j.title}}">
                     {% endif %}
                 </span>
-                <a href="{% url 'post' id=j.id %}">
-                    <h3>{{j.title}}</h3>
-                </a>
-                <p>{{j.content|truncatewords:14}}</p>
-                <span><b>{{j.author}} le {{j.date|date:"d M y"}} - {{j.date|time:"H:i"}}</b></span>
-                {% endfor %}
+                <div id="carousselContent">
+                    <a href="{% url 'post' id=j.id %}">
+                        <h3>{{j.title|truncatewords:15}}</h3>
+                    </a>
+                    <p>{{j.content|truncatewords:20}}</p>
+                    <span><b>{{j.author}} le {{j.date|date:"d M y"}} - {{j.date|time:"H:i"}}</b></span>
+                    {% endfor %}
+                </div>
             </div>
             <div class="card_list">
             {% for i in posts %}
@@ -40,7 +42,7 @@
                     </span>
                     <div class="content">
                         <a href="{% url 'post' id=i.id %}">
-                            <h4>{{i.title}}</h4>
+                            <h4>{{i.title|truncatewords:10}}</h4>
                         </a>
                         <span><b>{{i.author}} le {{i.date|date:"d M y"}} - {{i.date|time:"H:i"}}</b></span>
                     </div>
