@@ -38,10 +38,11 @@ def userBoard(request, id):
     print(type(id), type(request.user.id))
     if request.user.id == int(id):
         user = get_object_or_404(User, id=id)
-        return render(request, 'user/userBoard.html', context={'user': user})
+        articles = Post.objects.filter(author_id=id).order_by('-date')[:5]
+        print(articles)
+        return render(request, 'user/userBoard.html', context={'user': user, 'articles': articles})
     else:
         return render(request, 'user/badUser.html')
-
 
 def signup(request):
     form = SignupForm()
@@ -73,7 +74,9 @@ def connect(request):
             if user is not None:
                 login(request, user)
                 return redirect('home')
-    return render(request, 'connect.html', context={"form": form})
+            else:
+                return render(request, 'connect.html', context={"form": form, "invalide": True})
+    return render(request, 'connect.html', context={"form": form, 'invalide': False})
 
 def logout_view(request):
     logout(request)

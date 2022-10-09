@@ -1,23 +1,84 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap");
-#user {
-  width: 50%;
-  height: 50vh;
-  border: 1px solid lightgray;
+body {
+  margin: 0;
+  overflow-x: hidden;
+  height: 100vh;
+  max-height: 100vh;
 }
-#user header {
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 0 2%;
+}
+section #user {
+  width: 50%;
+  height: 42vh;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+section #user header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+section #user header button {
+  border: none;
+  background-color: white;
+  margin-right: 2vw;
+}
+section #user header button a {
+  text-decoration: none;
+  color: black;
+}
+section #articles {
+  width: 100%;
+  height: 42vh;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+section #articles #articles_container {
+  width: 100%;
+  display: flex;
+  padding: 2%;
+}
+section #articles #historique {
+  width: 20vw;
+  height: 80%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+section #articles #historique header {
+  background-color: #ff9500;
+  border-radius: 5px 5px 0 0;
+}
+section #articles #historique header h3 {
+  font-size: 15px;
+}
+section #articles #historique li a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+header {
   width: 100%;
   height: 12%;
   background-color: #8D00BE;
+  border-radius: 5px 5px 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-#user header h3 {
+header h3 {
   margin: 0;
   font-size: 20px;
   color: white;
   line-height: 20px;
   font-family: "Noto Sans", sans-serif;
-  padding-left: 3%;
+  padding-left: 2vw;
 }

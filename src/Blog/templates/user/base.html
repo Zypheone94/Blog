@@ -8,18 +8,27 @@
 </head>
 <body>
 
-   <header>
-      <h2>User Board</h2>
-   </header>
-
   <section>
       <div id="user">
         <header>
             <h3>{{user.username}}</h3>
+            <button><a href="{% url 'logout' %}">Déconnexion</a></button>
         </header>
       </div>
       <div id="articles">
-
+        <header>
+            <h3>Articles</h3>
+        </header>
+        <div id="articles_container">
+            <div id="historique">
+                <header><h3>Derniers Articles</h3></header>
+                <ul>
+                    {% for post in articles %}
+                        <li>{{ post.title }} : <a href="{% url 'post' id=post.id %}">Voir</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
       </div>
   </section>
 

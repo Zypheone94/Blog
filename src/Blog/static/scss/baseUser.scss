@@ -1,34 +1,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
 
 $basecolor:#8D00BE;
+$basecolor2: #ff9500;
 $basefont: 'Noto Sans', sans-serif;
 
-#user{
-    width: 50%;
-    height: 50vh;
-    border: 1px solid lightgray;
+body{
+    margin: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    max-height: 100vh;
 
+}
 
-    header{
-        width: 100%;
-        height: 12%;
-        background-color: $basecolor;
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    padding: 0 2%;
 
-        padding: 0;
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    #user{
+        width: 50%;
+        height: 42vh;
+        border: 1px solid lightgray;
+        border-radius: 5px;
 
-        h3{
-            margin: 0;
-            font-size: 20px;
-            color: white;
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
 
-            line-height: 20px;
-            font-family: $basefont;
+            button{
+                border: none;
+                background-color: white;
 
-            padding-left: 3%;
+                margin-right: 2vw;
+
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
         }
+     
+    }
+    
+    #articles{
+        width: 100%;
+        height: 42vh;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+
+        #articles_container{
+            width: 100%;
+            display: flex;
+            
+            padding: 2%;
+        }
+
+        #historique{
+            width: 20vw;
+            height: 80%;
+
+            border: 1px solid lightgray;
+            border-radius: 5px;
+
+            header{
+                background-color: $basecolor2;
+                border-radius: 5px 5px 0 0;
+                
+                h3{
+                    font-size: 15px;
+                }
+            }
+
+            li {
+                a{
+                    font-weight: bold;
+                    text-decoration: none;
+                    color: black
+                }
+            }
+        }
+    }
+}
+
+header{
+    width: 100%;
+    height: 12%;
+    background-color: $basecolor;
+    border-radius: 5px 5px 0 0;
+
+    padding: 0;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+
+    h3{
+        margin: 0;
+        font-size: 20px;
+        color: white;
+
+        line-height: 20px;
+        font-family: $basefont;
+
+        padding-left: 2vw;
     }
 }
