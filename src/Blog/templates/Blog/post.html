@@ -2,15 +2,24 @@
 {% load static %}
 
 {% block style %}
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
 {% endblock %}
 
 {% block title %}
     {{post.title}}
 {% endblock %}
 
+{% block banniere %}
+    {% if post.mainImage == 'Null' %}
+        style="background-image:url('/media/default.jpg'); background-repeat: no-repeat; background-position: center"
+    {% else %}
+        style="background-image:url({{post.mainImage.url}}); background-repeat: no-repeat; background-position: center"
+    {% endif %}
+{% endblock %}
+
 {% block section %}
 
-  <h1>{{post.title}}</h1>
+    <h1>{{post.title}}</h1>
+    <p>{{post.content}}</p>
 
 {% endblock %}

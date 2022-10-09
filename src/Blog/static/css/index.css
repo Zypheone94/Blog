@@ -14,12 +14,14 @@
   box-shadow: 1px 3px 5px #c4c4c4;
 }
 .mainContent .caroussel .img_span {
-  max-width: 60%;
+  max-height: 60%;
   display: flex;
   justify-content: center;
 }
 .mainContent .caroussel img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .mainContent .caroussel #carousselContent {
   padding: 2% 15% 2% 7%;
